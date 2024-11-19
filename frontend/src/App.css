@@ -1,0 +1,262 @@
+/* App.css */
+
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* App Container */
+.App {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Heading Styling */
+h1 {
+  color: #4A90E2;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Toggle Buttons Styling */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.toggle-label {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #555;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-label input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toggle-label.active {
+  background-color: #4A90E2;
+  color: white;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form div {
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+textarea {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 10px;
+  resize: vertical;
+  min-height: 150px;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+.file-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.file-input-button {
+  background-color: #4A90E2;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.file-input-button:hover {
+  background-color: #357ABD;
+}
+
+.file-name {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Submit Button */
+button {
+  background-color: #4A90E2;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #357ABD;
+}
+
+/* Result Section */
+.result {
+  margin-top: 30px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.result h2 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.result p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.result .sentiment-score {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.result .sentiment-score p {
+  font-size: 1.1rem;
+  color: #4A90E2;
+  margin: 5px 0;
+}
+
+.result .sentiment-score span {
+  font-weight: bold;
+  color: #333;
+}
+
+.result .result-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.result .result-item p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.result .result-item .score {
+  font-weight: bold;
+  color: #333;
+}
+
+.result .result-item .score-value {
+  color: #4A90E2;
+  font-weight: normal;
+}
+
+.result .result-item .score-percentage {
+  color: #357ABD;
+}
+
+.text-input-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px; /* Space below the container */
+}
+
+.text-input-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px; /* Space between label and text area */
+  display: block; /* Ensure the label appears above the text area */
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px;
+    width: 90%;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
